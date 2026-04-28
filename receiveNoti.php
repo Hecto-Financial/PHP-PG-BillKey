@@ -94,8 +94,8 @@ $noti = array(
     "해시값:".$pktHash
 );
 
-/** 해쉬 조합 필드 
- *  결과코드 +  거래일시 + 상점아이디 + 가맹점거래번호 + 거래금액 + 라이센스키 */
+/** 해쉬 조합 필드
+ *  결과코드 +  거래일시 + 상점아이디 + 가맹점거래번호 + 거래금액(평문) + 라이센스키 */
 $hashPlain = $outStatCd.$trdDtm.$mchtId.$mchtTrdNo.$trdAmt.$licenseKey;
 $hashCipher ="";
 
