@@ -231,103 +231,103 @@ try{
         </tr>
         <tr>
             <td>mchtId[상점아이디]</td>
-            <td><?php echo $respParam["mchtId"] ?></td>
+            <td><?php echo htmlspecialchars($respParam["mchtId"], ENT_QUOTES, "UTF-8") ?></td>
         </tr>
         <tr>
             <td>ver[버전]</td>
-            <td><?php echo $respParam["ver"] ?></td>
+            <td><?php echo htmlspecialchars($respParam["ver"], ENT_QUOTES, "UTF-8") ?></td>
         </tr>
         <tr>
             <td>method[결제수단]</td>
-            <td><?php echo $respParam["method"] ?></td>
+            <td><?php echo htmlspecialchars($respParam["method"], ENT_QUOTES, "UTF-8") ?></td>
         </tr>
         <tr>
             <td>bizType[업무구분]</td>
-            <td><?php echo $respParam["bizType"] ?></td>
+            <td><?php echo htmlspecialchars($respParam["bizType"], ENT_QUOTES, "UTF-8") ?></td>
         </tr>
         <tr>
             <td>encCd[암호화구분]</td>
-            <td><?php echo $respParam["encCd"] ?></td>
+            <td><?php echo htmlspecialchars($respParam["encCd"], ENT_QUOTES, "UTF-8") ?></td>
         </tr>
         <tr>
             <td>mchtTrdNo[상점주문번호]</td>
-            <td><?php echo $respParam["mchtTrdNo"] ?></td>
+            <td><?php echo htmlspecialchars($respParam["mchtTrdNo"], ENT_QUOTES, "UTF-8") ?></td>
         </tr>
         <tr>
             <td>trdNo[헥토파이낸셜 거래번호]</td>
-            <td><?php echo $respParam["trdNo"] ?></td>
+            <td><?php echo htmlspecialchars($respParam["trdNo"], ENT_QUOTES, "UTF-8") ?></td>
         </tr>
         <tr>
             <td>trdDt[요청일자]</td>
-            <td><?php echo $respParam["trdDt"] ?></td>
+            <td><?php echo htmlspecialchars($respParam["trdDt"], ENT_QUOTES, "UTF-8") ?></td>
         </tr>
         <tr>
             <td>trdTm[요청시간]</td>
-            <td><?php echo $respParam["trdTm"] ?></td>
+            <td><?php echo htmlspecialchars($respParam["trdTm"], ENT_QUOTES, "UTF-8") ?></td>
         </tr>
         <tr>
             <td>outStatCd[거래상태코드]</td>
-            <td><?php echo $respParam["outStatCd"] ?></td>
+            <td><?php echo htmlspecialchars($respParam["outStatCd"], ENT_QUOTES, "UTF-8") ?></td>
         </tr>
         <tr>
             <td>outRsltCd[거래결과코드]</td>
-            <td><?php echo $respParam["outRsltCd"] ?></td>
+            <td><?php echo htmlspecialchars($respParam["outRsltCd"], ENT_QUOTES, "UTF-8") ?></td>
         </tr>
         <tr>
             <td>outRsltMsg[결과메세지]</td>
-            <td><?php echo $respParam["outRsltMsg"] ?></td>
+            <td><?php echo htmlspecialchars($respParam["outRsltMsg"], ENT_QUOTES, "UTF-8") ?></td>
         </tr>
      	<tr>
             <td colspan="2" style="text-align: center;"><h4>data</h4></td>
         </tr>
         <tr>
             <td>pktHash[해쉬값]</td>
-            <td><?php echo $respParam["pktHash"] ?></td>
+            <td><?php echo htmlspecialchars($respParam["pktHash"], ENT_QUOTES, "UTF-8") ?></td>
         </tr>
         <tr>
             <td>trdAmt[거래금액]</td>
-            <td><?php echo $respParam["trdAmt"] ?></td>
+            <td><?php echo htmlspecialchars($respParam["trdAmt"], ENT_QUOTES, "UTF-8") ?></td>
         </tr>
 
         <tr>
             <td>cardNo[카드번호]</td>
-            <td><?php echo $respParam["cardNo"] ?></td>
+            <td><?php echo htmlspecialchars($respParam["cardNo"], ENT_QUOTES, "UTF-8") ?></td>
         </tr>
         <tr>
             <td>vldDtYear[유효기간(년)]</td>
-            <td><?php echo $respParam["vldDtYear"] ?></td>
+            <td><?php echo htmlspecialchars($respParam["vldDtYear"], ENT_QUOTES, "UTF-8") ?></td>
         </tr>
         <tr>
             <td>vldDtMon[유효기간(월)]</td>
-            <td><?php echo $respParam["vldDtMon"] ?></td>
+            <td><?php echo htmlspecialchars($respParam["vldDtMon"], ENT_QUOTES, "UTF-8") ?></td>
         </tr>
         <tr>
             <td>issrId[발급사아이디]</td>
-            <td><?php echo $respParam["issrId"] ?></td>
+            <td><?php echo htmlspecialchars($respParam["issrId"], ENT_QUOTES, "UTF-8") ?></td>
         </tr>
         <tr>
             <td>cardNm[카드사명]</td>
-            <td><?php echo $respParam["cardNm"] ?></td>
+            <td><?php echo htmlspecialchars($respParam["cardNm"], ENT_QUOTES, "UTF-8") ?></td>
         </tr>
         <tr>
             <td>cardKind[카드종류명]</td>
-            <td><?php echo $respParam["cardKind"] ?></td>
+            <td><?php echo htmlspecialchars($respParam["cardKind"], ENT_QUOTES, "UTF-8") ?></td>
         </tr>
         <tr>
             <td>ninstmtTypeCd[무이자할부타입]</td>
-            <td><?php echo $respParam["ninstmtTypeCd"] ?></td>
+            <td><?php echo htmlspecialchars($respParam["ninstmtTypeCd"], ENT_QUOTES, "UTF-8") ?></td>
         </tr>
         <tr>
             <td>instmtMon[할부개월수]</td>
-            <td><?php echo $respParam["instmtMon"] ?></td>
+            <td><?php echo htmlspecialchars($respParam["instmtMon"], ENT_QUOTES, "UTF-8") ?></td>
         </tr>
         <tr>
             <td>apprNo[승인번호]</td>
-            <td><?php echo $respParam["apprNo"] ?></td>
+            <td><?php echo htmlspecialchars($respParam["apprNo"], ENT_QUOTES, "UTF-8") ?></td>
         </tr>
         <tr style="background-color:yellow;">
             <td>billKey[빌키]</td>
-            <td><?php echo $respParam["billKey"] ?></td>
+            <td><?php echo htmlspecialchars($respParam["billKey"], ENT_QUOTES, "UTF-8") ?></td>
         </tr>
 
         <tr>
