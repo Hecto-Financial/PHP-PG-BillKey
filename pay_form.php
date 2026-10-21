@@ -94,7 +94,7 @@ function doAction(){
     
     <!-- 상점아이디(헥토파이낸셜에서 발급하는 고유 상점아이디) -->
     <tr class="required">
-    	<td>mchtId[상점아이디]</td><td><input type="text" name="mchtId" value="<?php echo PG_MID ?>" maxlength="10"/></td>
+    	<td>mchtId[상점아이디]</td><td><input type="text" name="mchtId" value="<?php echo PG_MID ?>" maxlength="12"/></td>
     </tr>
     
     <!-- 전문버전(1st[0] 고정 /2nd[A] 고정/ 3,4th:연동규격서버전. v1.9 => [19]) -->
@@ -102,7 +102,7 @@ function doAction(){
     	<td>ver[전문버전]</td><td><input type="text" name="ver" value="0A19" maxlength="4"/></td>
     </tr>
     
-    <!-- 결제수단(가상계좌[CA] 고정)-->
+    <!-- 결제수단(신용카드[CA] 고정)-->
     <tr class="fixed">
     	<td>method[결제수단]</td><td><input type="text" name="method" value="CA" readonly/></td>
     </tr>
@@ -119,7 +119,7 @@ function doAction(){
     
     <!-- 상점주문번호(상점에서 생성하는 유니크한 주문번호) -->
     <tr class="required">
-    	<td>mchtTrdNo[상점주문번호]</td><td><input type="text" name="mchtTrdNo" value="" maxlength="50"/></td>
+    	<td>mchtTrdNo[상점주문번호]</td><td><input type="text" name="mchtTrdNo" value="" maxlength="100"/></td>
     </tr>
     
     <!-- 요청일자(현재 전문을 요청하는 일자[yyyyMMdd]) -->
@@ -198,12 +198,12 @@ function doAction(){
     
     <!-- 상품명 -->
     <tr class="required">
-        <td>pmtprdNm[상품명]</td><td><input type="text" name="pmtprdNm" value="테스트상품" maxlength="42"/></td>
+        <td>pmtprdNm[상품명]</td><td><input type="text" name="pmtprdNm" value="테스트상품" maxlength="128"/></td>
     </tr>
     
     <!-- 상점고객명 -->
     <tr>
-        <td>mchtCustNm[상점고객명]</td><td><input type="text" name="mchtCustNm" value="홍길동" maxlength="10"/></td>
+        <td>mchtCustNm[상점고객명]</td><td><input type="text" name="mchtCustNm" value="홍길동" maxlength="30"/></td>
     </tr>
     
     <!-- 상점고객아이디 -->
