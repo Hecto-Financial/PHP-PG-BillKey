@@ -45,6 +45,20 @@ function null_to_empty($data){
 }
 
 /* XSS 방지 */
+/* 가공하지 않은 원본 요청 파라미터 조회
+   해시 검증은 헥토파이낸셜이 보낸 값 그대로를 대상으로 해야 합니다.
+   get_param()은 화면 출력 안전을 위해 trim/stripslashes/htmlspecialchars를 적용하므로,
+   그 결과로 해시를 만들면 특수문자가 포함된 정상 노티가 검증에 실패합니다. */
+function get_raw_param($name){
+    if( $_SERVER['REQUEST_METHOD'] == "POST") {
+        if(isset($_POST[$name])){
+            return $_POST[$name];
+        }else{
+            return NULL;
+        }
+    }
+}
+
 function prevent_xss( $param){
     $param = trim( $param );
     $param = stripslashes($param);
@@ -54,7 +68,7 @@ function prevent_xss( $param){
 
 
 /* CURL HTTP전송 */
-function send_api( $targetUrl, $param = array(), $connTimeout, $timeout){
+function send_api( $targetUrl, $param, $connTimeout, $timeout){
     $tmp = $param["params"];
     $mchtTrdNo = $tmp["mchtTrdNo"];
     
@@ -74,8 +88,10 @@ function send_api( $targetUrl, $param = array(), $connTimeout, $timeout){
     curl_setopt($ch, CURLOPT_RETURNTRANSFER, true);                     //요청 결과를 문자열로 반환 
     curl_setopt($ch, CURLOPT_CONNECTTIMEOUT, $connTimeout);             //connection timeout
     curl_setopt($ch, CURLOPT_TIMEOUT, $timeout);                        //total timeout
-    curl_setopt($ch, CURLOPT_SSL_VERIFYPEER, false);                    //원격 서버의 인증서가 유효한지 검사 안함
-    curl_setopt($ch, CURLOPT_POST, true);                               //true시 post 전송 
+    curl_setopt($ch, CURLOPT_SSL_VERIFYPEER, true);                     //원격 서버의 인증서 유효성 검사
+    curl_setopt($ch, CURLOPT_SSL_VERIFYHOST, 2);                        //인증서의 호스트명 일치 검사
+    curl_setopt($ch, CURLOPT_SSLVERSION, CURL_SSLVERSION_TLSv1_2);      //TLS 1.2 이상만 허용
+    curl_setopt($ch, CURLOPT_POST, true);                               //true시 post 전송
     curl_setopt($ch, CURLOPT_POSTFIELDS, $sendData);                    //POST data
     
     
@@ -89,7 +105,6 @@ function send_api( $targetUrl, $param = array(), $connTimeout, $timeout){
     }
 
     $HTTP_CODE = curl_getinfo($ch, CURLINFO_HTTP_CODE);
-    curl_close($ch);//curl 통신 종료
 
  
 

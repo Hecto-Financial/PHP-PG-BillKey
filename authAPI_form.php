@@ -7,7 +7,7 @@
 <html>
 <head>
 <meta charset="UTF-8">
-<title>S'Pay</title>
+<title>헥토파이낸셜</title>
 <style>
 #info	                		{display:flex; font-family:굴림; font-size:10pt; line-height: 20%;}
 #info > div > p	                {font-size:13pt;}
@@ -76,19 +76,21 @@ function doAction(){
 		<p><a href="authAPI_form.php" style="text-decoration:none;">[빌키 발급 API]</a></p>
 		<p><a href="pay_form.php" style="text-decoration:none;">[결제 API(빌키 발급 포함)]</a><p></p>
 		<p><a href="billKey_form.php" style="text-decoration:none;">[빌키 결제 API]</a></p>
+		<p><a href="delKey_form.php" style="text-decoration:none;">[빌키 삭제 API]</a></p>
 		<p><a href="cancel_form.php" style="text-decoration:none;">[취소 API]</a></p>
 	</div>
 	<div id = "infoChild">
 		<p>:&nbsp;&nbsp;결제 하지 않고 빌키 발급</p>
 		<p>:&nbsp;&nbsp;결제 후 상점 아이디 설정에 따라 빌키 발급</p>
 		<p>:&nbsp;&nbsp;발급 받은 빌키로 정기 결제</p>
+		<p>:&nbsp;&nbsp;발급 받은 빌키 삭제</p>
 		<p>:&nbsp;&nbsp;결제된 거래 건 취소</p>
 	</div>
 </div>
 <h3>전자결제(PG) 신용카드 빌키 발급 API</h3>
 <p>
 	<b>신용카드 빌키 발급 API</b> : 결제 하지 않고 빌키 발급<br>
-	빌키가 발급되지 않을시 문의 주십시오. <b>settle_fintech@hecto.co.kr</b><br>
+	빌키가 발급되지 않을시 문의 주십시오. 문의처는 README를 참고하십시오.<br>
 </p>
 <form id="STPG_billForm" name="STPG_billForm" >
 

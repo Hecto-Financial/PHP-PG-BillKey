@@ -7,7 +7,7 @@
 <html>
 <head>
 <meta charset="UTF-8">
-<title>S'Pay</title>
+<title>헥토파이낸셜</title>
 <style>
 #info	                		{display:flex; font-family:굴림; font-size:10pt; line-height: 20%;}
 #info > div > p	                {font-size:13pt;}
@@ -56,12 +56,14 @@ function doAction(){
 		<p><a href="authAPI_form.php" style="text-decoration:none;">[빌키 발급 API]</a></p>
 		<p><a href="pay_form.php" style="text-decoration:none;">[결제 API(빌키 발급 포함)]</a><p></p>
 		<p><a href="billKey_form.php" style="text-decoration:none;">[빌키 결제 API]</a></p>
+		<p><a href="delKey_form.php" style="text-decoration:none;">[빌키 삭제 API]</a></p>
 		<p><a href="cancel_form.php" style="text-decoration:none;">[취소 API]</a></p>
 	</div>
 	<div id = "infoChild">
 		<p>:&nbsp;&nbsp;결제 하지 않고 빌키 발급</p>
 		<p>:&nbsp;&nbsp;결제 후 상점 아이디 설정에 따라 빌키 발급</p>
 		<p>:&nbsp;&nbsp;발급 받은 빌키로 정기 결제</p>
+		<p>:&nbsp;&nbsp;발급 받은 빌키 삭제</p>
 		<p>:&nbsp;&nbsp;결제된 거래 건 취소</p>
 	</div>
 </div>
@@ -83,7 +85,7 @@ function doAction(){
     
     <!-- 상점아이디(헥토파이낸셜에서 발급하는 고유 상점아이디) -->
     <tr class="required">
-    	<td>mchtId[상점아이디]</td><td><input type="text" name="mchtId" value="<?php echo PG_MID ?>" maxlength="10"/></td>
+    	<td>mchtId[상점아이디]</td><td><input type="text" name="mchtId" value="<?php echo PG_MID ?>" maxlength="12"/></td>
     </tr>
     
     <!-- 전문버전(1st[0] 고정 /2nd[A] 고정/ 3,4th:연동규격서버전. v1.9 => [19]) -->
@@ -91,7 +93,7 @@ function doAction(){
     	<td>ver[전문버전]</td><td><input type="text" name="ver" value="0A19" maxlength="4"/></td>
     </tr>
     
-    <!-- 결제수단(가상계좌[CA] 고정)-->
+    <!-- 결제수단(신용카드[CA] 고정)-->
     <tr class="fixed">
     	<td>method[결제수단]</td><td><input type="text" name="method" value="CA" readonly/></td>
     </tr>
@@ -108,7 +110,7 @@ function doAction(){
     
     <!-- 상점주문번호(상점에서 생성하는 유니크한 주문번호) -->
     <tr class="required">
-    	<td>mchtTrdNo[상점주문번호]</td><td><input type="text" name="mchtTrdNo" value="" maxlength="50"/></td>
+    	<td>mchtTrdNo[상점주문번호]</td><td><input type="text" name="mchtTrdNo" value="" maxlength="100"/></td>
     </tr>
     
     <!-- 요청일자(현재 전문을 요청하는 일자[yyyyMMdd]) -->
@@ -167,12 +169,12 @@ function doAction(){
     
     <!-- 상품명 -->
     <tr class="required">
-        <td>pmtprdNm[상품명]</td><td><input type="text" name="pmtprdNm" value="테스트상품" maxlength="42"/></td>
+        <td>pmtprdNm[상품명]</td><td><input type="text" name="pmtprdNm" value="테스트상품" maxlength="128"/></td>
     </tr>
     
     <!-- 상점고객명 -->
     <tr>
-        <td>mchtCustNm[상점고객명]</td><td><input type="text" name="mchtCustNm" value="홍길동" maxlength="10"/></td>
+        <td>mchtCustNm[상점고객명]</td><td><input type="text" name="mchtCustNm" value="홍길동" maxlength="30"/></td>
     </tr>
     
     <!-- 상점고객아이디 -->
